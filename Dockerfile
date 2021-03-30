@@ -8,8 +8,7 @@ COPY poll_platform /home/poll_platform
 RUN apt-get install -y virtualenv
 WORKDIR /home/
 RUN python3.8 -m venv ./venv
-RUN ./venv/bin/activate
-WORKDIR /home/poll_platform
-RUN pip install -r requirements.txt
-
+WORKDIR /home/poll_platform/
+RUN pip3 install -r requirements.txt
+RUN pip3 install python-dotenv
 EXPOSE 8000

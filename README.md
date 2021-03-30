@@ -1,10 +1,15 @@
 # PollPlatform
 Описание API: В poll/url.py прописаны url'ы по взаимодествию с REST API
 Запустить можно следующим образом:
-1) Скопировать репозиторий git clone
-2) Установить зависимости pip install -r requirements.txt
-3) manage.py runserver
-
+Вариант 1:
+    1) Скопировать репозиторий git clone
+    2) Установить зависимости pip install -r requirements.txt
+    3) manage.py runserver
+Вариант 2:
+    1) sudo docker build .
+    2) sudo docker run -it -p 8000:8000 3815b185efd5
+    3) python3 manage.py runserver 0.0.0.0:8000
+    3) python3 manage.py runserver 0.0.0.0:8000
 
 
 
@@ -21,7 +26,7 @@
 
 Если пользователь проходит опрос анонимно, то (можно проверить перейдя в браузере в инкогнито режим) ему создается учетная запись в системе. Выбранные пользователем/анонимным пользователем варинты ответа на вопросы.
 
-Чтобы ответиь на вопрос необходимо передать в post запрос JSON содержащий question_id и id(s) ответа в случае question_type=choice/multiple choice, либо текст в случае question_type=test
+Чтобы ответиь на вопрос необходимо передать в post запрос JSON содержащий question_id и id(s) ответа в случае question_type=choice/multiple choice, либо текст в случае question_type=text
 
     Example:
         answers: {
